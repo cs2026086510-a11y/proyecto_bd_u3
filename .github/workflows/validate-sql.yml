@@ -1,0 +1,10 @@
+name: Validate SQL
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: GianfrancoArocutipa/sql-nosql-validator-action@v1
