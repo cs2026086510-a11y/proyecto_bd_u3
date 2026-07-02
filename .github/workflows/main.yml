@@ -1,2 +1,13 @@
-- name: SQL/NoSQL Syntax Validator
-  uses: GianfrancoArocutipa/sql-nosql-validator-action@v1
+name: Validate SQL
+
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: GianfrancoArocutipa/sql-nosql-validator-action@v1
+        with:
+          path: '.'
+          extension: '.sql'
